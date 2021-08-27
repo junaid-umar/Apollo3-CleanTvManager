@@ -40,6 +40,7 @@ android {
         dataBinding = true
     }
     compileOptions {
+        isCoreLibraryDesugaringEnabled = true
         sourceCompatibility = JavaVersion.VERSION_11
         targetCompatibility = JavaVersion.VERSION_11
     }
@@ -63,6 +64,8 @@ dependencies {
     implementation(Libs.MATERIAL)
     implementation(Libs.CONSTRAINT_LAYOUT)
 
+    // for backward compatibility of Java 8 features e.g java time
+    coreLibraryDesugaring(Libs.LIBRARY_DESUGAR)
 
     implementation(Libs.COROUTINES)
 

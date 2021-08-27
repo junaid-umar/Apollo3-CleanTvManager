@@ -18,14 +18,9 @@ object Versions {
     const val CONSTRAINT_LAYOUT = "2.1.0"
     const val GLIDE = "4.12.0"
     const val COROUTINES = "1.3.9"
-    const val KOTLINX_SERIALIZATION_JSON = "1.2.2"
-    const val KOTLINX_SERIALIZATION_RETROFIT = "0.8.0"
-    const val RETROFIT = "2.9.0"
+    const val LIBRARY_DESUGAR="1.1.5"
     const val ROOM_VERSION = "2.3.0"
     const val HILT = "2.38.1"
-    const val OKHTTP_VERSION = "4.9.0"
-
-
     const val JUNIT5 = "5.7.0"
     const val JUNIT4 = "4.13.2"
     const val COROUTINES_TEST = "1.5.1"

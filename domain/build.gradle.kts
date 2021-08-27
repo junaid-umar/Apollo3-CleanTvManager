@@ -17,6 +17,7 @@ dependencies {
     kapt(Libs.HILT_COMPILER)
 
     testImplementation(Libs.JUNIT4)
+    testImplementation(Libs.TRUTH)
     testImplementation(Libs.JUPITER_ENGINE)
     testImplementation(Libs.MOCKK)
     testImplementation(Libs.COROUTINES_TEST)
