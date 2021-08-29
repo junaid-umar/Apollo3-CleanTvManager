@@ -1,0 +1,15 @@
+query GetMovies {
+	movies {
+		edges {
+			node {
+				id,title,releaseDate,seasons
+			}
+		}
+	}
+}
+
+query GetMovie($id: ID!) {
+	movie(id:$id) {
+		id,title,releaseDate,seasons
+	}
+}

@@ -1,0 +1,18 @@
+mutation CreateMovie($title: String!, $date: Date, $season: Float) {
+    createMovie(
+        input: {
+            fields: {
+                title: $title,
+                releaseDate: $date,
+                seasons: $season,
+            }
+        }
+    ) {
+        movie {
+            id,
+            title,
+            seasons,
+            releaseDate,
+        }
+    }
+}
