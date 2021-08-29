@@ -10,7 +10,6 @@ import kotlinx.coroutines.test.TestCoroutineDispatcher
 import kotlinx.coroutines.test.runBlockingTest
 import org.junit.Assert
 import org.junit.Test
-import org.junit.jupiter.api.Assertions.*
 
 @ExperimentalCoroutinesApi
 class FlowUseCaseTest {

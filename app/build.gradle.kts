@@ -63,6 +63,7 @@ dependencies {
 
     implementation(Libs.MATERIAL)
     implementation(Libs.CONSTRAINT_LAYOUT)
+    implementation(Libs.APOLLO)
 
     // for backward compatibility of Java 8 features e.g java time
     coreLibraryDesugaring(Libs.LIBRARY_DESUGAR)

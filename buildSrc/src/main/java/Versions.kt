@@ -16,10 +16,9 @@ object Versions {
     const val NAVIGATION_FRAGMENT = "2.3.5"
     const val MATERIAL = "1.4.0"
     const val CONSTRAINT_LAYOUT = "2.1.0"
-    const val GLIDE = "4.12.0"
     const val COROUTINES = "1.3.9"
+    const val APOLLO = "3.0.0-alpha03"
     const val LIBRARY_DESUGAR="1.1.5"
-    const val ROOM_VERSION = "2.3.0"
     const val HILT = "2.38.1"
     const val JUNIT5 = "5.7.0"
     const val JUNIT4 = "4.13.2"
@@ -30,6 +29,7 @@ object Versions {
     const val CORE_TESTING = "1.1.1"
     const val TURBINE="0.6.0"
     const val TRUTH="1.1.3"
+    const val OKHTTP_VERSION = "4.9.1"
 
 
 }

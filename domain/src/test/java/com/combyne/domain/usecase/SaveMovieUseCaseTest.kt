@@ -23,7 +23,7 @@ class SaveMovieUseCaseTest {
     @Before
     fun setUp() {
         MockKAnnotations.init(this)
-        saveMovieParams= SaveMovieParams(
+        saveMovieParams = SaveMovieParams(
             "test title",
             TimeUtils.stringToDate("2021-08-11T22:00:00.000Z"),
             1

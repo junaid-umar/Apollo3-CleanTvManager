@@ -20,18 +20,16 @@ object Libs {
     const val CONSTRAINT_LAYOUT =
         "androidx.constraintlayout:constraintlayout:${Versions.CONSTRAINT_LAYOUT}"
 
-    const val GLIDE = "com.github.bumptech.glide:glide:${Versions.GLIDE}"
-
 
     const val COROUTINES = "org.jetbrains.kotlinx:kotlinx-coroutines-android:${Versions.COROUTINES}"
+    const val APOLLO = "com.apollographql.apollo3:apollo-runtime:${Versions.APOLLO}"
+    const val APOLLO_CACHE = "com.apollographql.apollo3:apollo-normalized-cache:${Versions.APOLLO}"
+    const val APOLLO_CACHE_SQLITE = "com.apollographql.apollo3:apollo-normalized-cache-sqlite:${Versions.APOLLO}"
+
+
 
 
     const val LIBRARY_DESUGAR = "com.android.tools:desugar_jdk_libs:${Versions.LIBRARY_DESUGAR}"
-
-    const val ROOM = "androidx.room:room-runtime:${Versions.ROOM_VERSION}"
-    const val ROOM_KAPT = "androidx.room:room-compiler:${Versions.ROOM_VERSION}"
-    const val ROOM_KTX = "androidx.room:room-ktx:${Versions.ROOM_VERSION}"
-
 
     const val HILT = "com.google.dagger:hilt-android:${Versions.HILT}"
     const val HILT_CORE = "com.google.dagger:hilt-core:${Versions.HILT}"
@@ -39,7 +37,6 @@ object Libs {
 
 
 
-    const val JUPITER_API = "org.junit.jupiter:junit-jupiter-api:${Versions.JUNIT5}"
     const val JUPITER_ENGINE = "org.junit.jupiter:junit-jupiter-engine:${Versions.JUNIT5}"
     const val JUNIT4 = "junit:junit:${Versions.JUNIT4}"
     const val MOCKK = "io.mockk:mockk:${Versions.MOCKK}"
@@ -52,5 +49,5 @@ object Libs {
     const val HILT_TESTING = "com.google.dagger:hilt-android-testing:${Versions.HILT}"
     const val TURBINE = "app.cash.turbine:turbine:${Versions.TURBINE}"
     const val TRUTH = "com.google.truth:truth:${Versions.TRUTH}"
-
+    const val MOCK_WEB_SERVER = "com.squareup.okhttp3:mockwebserver:${Versions.OKHTTP_VERSION}"
 }

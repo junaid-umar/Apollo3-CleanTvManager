@@ -11,7 +11,6 @@ class TimeUtilsTest {
     private val formattedDateStr = "11 Aug 2021"
 
 
-
     @Test
     fun givenString_returnsDate() {
         val output = TimeUtils.stringToDate(
