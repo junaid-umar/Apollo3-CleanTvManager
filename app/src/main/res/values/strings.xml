@@ -1,3 +1,7 @@
 <resources>
     <string name="app_name">TvManager</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="show_list_of_added_movies">Show list of added movies</string>
+    <string name="add_new_movie">Add new movie</string>
 </resources>

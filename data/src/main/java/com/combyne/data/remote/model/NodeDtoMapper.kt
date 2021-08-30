@@ -20,7 +20,7 @@ class NodeDtoMapper : DomainMapper<GetMoviesQuery.Node, Movie> {
     }
 }
 
-fun GetMoviesQuery.Data.getDataOrNull(): List<Movie> {
+fun GetMoviesQuery.Data.getDataOrEmptyList(): List<Movie> {
     return this.movies.edges?.mapNotNull {
         it?.node?.let {
             NodeDtoMapper().toDomainModel(it)

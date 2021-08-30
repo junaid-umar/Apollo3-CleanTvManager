@@ -12,9 +12,9 @@ object Libs {
         "androidx.lifecycle:lifecycle-compiler:${Versions.LIFECYCLE_VERSION}"
 
     const val NAVIGATION_FRAGMENT =
-        "androidx.navigation:navigation-fragment-ktx:${Versions.NAVIGATION_FRAGMENT}"
+        "androidx.navigation:navigation-fragment-ktx:${Versions.NAVIGATION_VERSION}"
     const val NAVIGATION_UI =
-        "androidx.navigation:navigation-ui-ktx:${Versions.NAVIGATION_FRAGMENT}"
+        "androidx.navigation:navigation-ui-ktx:${Versions.NAVIGATION_VERSION}"
 
     const val MATERIAL = "com.google.android.material:material:${Versions.MATERIAL}"
     const val CONSTRAINT_LAYOUT =
