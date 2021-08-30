@@ -1,9 +1,12 @@
 package com.combyne.data.repository
 
+import app.cash.turbine.test
 import com.combyne.data.remote.MovieRemoteData
 import com.combyne.domain.usecase.GetMoviesParams
 import com.combyne.domain.usecase.SaveMovieParams
+import com.combyne.domain.util.Result
 import com.combyne.domain.util.TimeUtils
+import com.google.common.truth.Truth.assertThat
 import io.mockk.MockKAnnotations
 import io.mockk.coVerify
 import io.mockk.impl.annotations.RelaxedMockK
@@ -11,7 +14,8 @@ import kotlinx.coroutines.ExperimentalCoroutinesApi
 import kotlinx.coroutines.test.runBlockingTest
 import org.junit.Before
 import org.junit.Test
-
+import kotlin.time.ExperimentalTime
+@ExperimentalTime
 @ExperimentalCoroutinesApi
 class MovieRepositoryImplTest {
 
@@ -42,17 +46,23 @@ class MovieRepositoryImplTest {
 
     @Test
     fun getMovies() = runBlockingTest {
-        movieRepository.getMovies(moviesParams)
-        coVerify {
-            movieRemoteData.getMovies(moviesParams)
+        movieRepository.getMovies(moviesParams).test{
+            assertThat(awaitItem()).isInstanceOf(Result.Loading::class.java)
+            coVerify {
+                movieRemoteData.getMovies(moviesParams)
+            }
+            cancelAndConsumeRemainingEvents()
         }
     }
 
     @Test
     fun saveMovie() = runBlockingTest {
-        movieRepository.saveMovie(saveMovieParams)
-        coVerify {
-            movieRemoteData.saveMovie(saveMovieParams)
+        movieRepository.saveMovie(saveMovieParams).test{
+            assertThat(awaitItem()).isInstanceOf(Result.Loading::class.java)
+            coVerify {
+                movieRemoteData.saveMovie(saveMovieParams)
+            }
+            cancelAndConsumeRemainingEvents()
         }
     }
 }
