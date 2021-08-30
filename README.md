@@ -45,3 +45,4 @@ This App uses Github Actions for Continuous Integration.
 
 UI improvement & Instrumentation Test
 
+<img src="images/Image1.jpeg" width=200> <img src="images/Image2.jpeg" width=200> <img src="images/Image3.jpeg" width=200> 
