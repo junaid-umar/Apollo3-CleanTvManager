@@ -3,6 +3,7 @@ package com.combyne.tvmanager.presentation.util
 import android.view.View
 import android.widget.TextView
 import androidx.databinding.BindingAdapter
+import androidx.databinding.ObservableField
 import androidx.recyclerview.widget.DividerItemDecoration
 import androidx.recyclerview.widget.RecyclerView
 import com.combyne.domain.model.Movie
@@ -31,6 +32,7 @@ fun showErrorOn(view: View, item: Result<Any>?) {
 @BindingAdapter("bind:showDate")
 fun showDate(view: TextView, date: ZonedDateTime?) {
     date?.let {
+        view.visibility = View.VISIBLE
         view.text = "Release Date: " +TimeUtils.dateToString(date)
     } ?: run { view.visibility = View.GONE}
 }

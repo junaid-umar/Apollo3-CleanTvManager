@@ -5,18 +5,25 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
-import com.combyne.tvmanager.R
+import androidx.fragment.app.viewModels
+import com.combyne.tvmanager.databinding.FragmentCreateMovieBinding
+import dagger.hilt.android.AndroidEntryPoint
 
+@AndroidEntryPoint
 class CreateMovieFragment : Fragment() {
-
+    private val viewModel: CreateMovieViewModel by viewModels()
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?,
-    ): View? {
-        // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_create_movie, container, false)
-    }
+    ): View {
+        val binding: FragmentCreateMovieBinding = FragmentCreateMovieBinding.inflate(
+            inflater, container, false
+        )
+        binding.viewModel = viewModel
+        binding.lifecycleOwner = this
 
+        return binding.root
+    }
 
 }
