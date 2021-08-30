@@ -87,6 +87,7 @@ dependencies {
     testImplementation(Libs.JUPITER_ENGINE)
     testImplementation(Libs.MOCKK)
     testImplementation(Libs.COROUTINES_TEST)
+    testImplementation(Libs.TURBINE)
 
 
     // Not in use but to write instrumentation test later

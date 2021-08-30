@@ -1,7 +1,8 @@
-package com.combyne.tvmanager
+package com.combyne.tvmanager.presentation
 
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
+import com.combyne.tvmanager.R
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint

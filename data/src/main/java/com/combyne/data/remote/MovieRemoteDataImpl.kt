@@ -7,7 +7,7 @@ import com.apollographql.apollo3.cache.normalized.withFetchPolicy
 import com.apollographql.apollo3.exception.ApolloException
 import com.combyne.data.CreateMovieMutation
 import com.combyne.data.GetMoviesQuery
-import com.combyne.data.remote.model.getDataOrNull
+import com.combyne.data.remote.model.getDataOrEmptyList
 import com.combyne.data.remote.util.NetworkUtils.getNetworkErrorMessage
 import com.combyne.domain.model.Movie
 import com.combyne.domain.usecase.GetMoviesParams
@@ -28,7 +28,7 @@ constructor(
                 val request =
                     ApolloRequest(GetMoviesQuery()).withFetchPolicy(FetchPolicy.NetworkFirst)
                 val response: List<Movie> =
-                    apiClient.query(request).dataOrThrow.getDataOrNull()
+                    apiClient.query(request).dataOrThrow.getDataOrEmptyList()
                 emit(Result.Success(response))
 
             } catch (exception: ApolloException) {

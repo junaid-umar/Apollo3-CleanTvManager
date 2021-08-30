@@ -3,6 +3,7 @@ plugins {
     id("kotlin-android")
     id("kotlin-kapt")
     id("dagger.hilt.android.plugin")
+    id ("androidx.navigation.safeargs.kotlin")
 }
 
 android {
@@ -64,6 +65,7 @@ dependencies {
     implementation(Libs.MATERIAL)
     implementation(Libs.CONSTRAINT_LAYOUT)
     implementation(Libs.APOLLO)
+    implementation("androidx.legacy:legacy-support-v4:1.0.0")
 
     // for backward compatibility of Java 8 features e.g java time
     coreLibraryDesugaring(Libs.LIBRARY_DESUGAR)

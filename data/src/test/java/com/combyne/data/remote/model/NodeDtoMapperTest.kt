@@ -25,14 +25,14 @@ class NodeDtoMapperTest {
 
     @Test
     fun givenData_returnMovies() {
-        val output = FakeDataUtil.Data.GetMoviesQueryData.getDataOrNull()
+        val output = FakeDataUtil.Data.GetMoviesQueryData.getDataOrEmptyList()
 
         assertThat(output).isEqualTo(FakeDataUtil.Domain.movies)
     }
 
     @Test
     fun givenEmptyData_returnEmptyList() {
-        val output = FakeDataUtil.Data.GetMoviesQueryDataEmpty.getDataOrNull()
+        val output = FakeDataUtil.Data.GetMoviesQueryDataEmpty.getDataOrEmptyList()
 
         assertThat(output).isEqualTo(emptyList<List<Movie>>())
     }

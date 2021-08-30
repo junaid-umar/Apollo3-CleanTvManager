@@ -12,7 +12,11 @@ data class SaveMovieParams(
     val title: String,
     val releaseDate: ZonedDateTime?,
     val season: Int?,
-)
+){
+    companion object Validate{
+
+    }
+}
 
 class SaveMovieUseCase
 @Inject constructor(

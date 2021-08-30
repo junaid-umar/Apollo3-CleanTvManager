@@ -13,7 +13,7 @@ object Versions {
     const val CORE_TKX = "1.6.0"
     const val APPCOMPAT = "1.3.1"
     const val LIFECYCLE_VERSION = "2.4.0-alpha03"
-    const val NAVIGATION_FRAGMENT = "2.3.5"
+    const val NAVIGATION_VERSION = "2.3.5"
     const val MATERIAL = "1.4.0"
     const val CONSTRAINT_LAYOUT = "2.1.0"
     const val COROUTINES = "1.3.9"

@@ -2,7 +2,7 @@ package com.combyne.data.remote.api
 
 import com.combyne.data.BuildConfig
 
-object ApiClient {
+internal object ApiClient {
 
     const val DATABASE_NAME = "tv_manager"
 
