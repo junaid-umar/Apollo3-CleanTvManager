@@ -22,7 +22,7 @@ class MovieRemoteDataImpl
 constructor(
     private val apiClient: ApolloClient,
 ) : MovieRemoteData {
-    override suspend fun getMovies(getMoviesParams: GetMoviesParams): Flow<Result<List<Movie>>> =
+    override fun getMovies(getMoviesParams: GetMoviesParams): Flow<Result<List<Movie>>> =
         flow {
             try {
                 val request =
@@ -37,7 +37,7 @@ constructor(
         }
 
 
-    override suspend fun saveMovie(saveMovieParams: SaveMovieParams): Flow<Result<Unit>> = flow {
+    override fun saveMovie(saveMovieParams: SaveMovieParams): Flow<Result<Unit>> = flow {
         try {
             apiClient.mutate(CreateMovieMutation(title = saveMovieParams.title,
                 date = saveMovieParams.releaseDate,

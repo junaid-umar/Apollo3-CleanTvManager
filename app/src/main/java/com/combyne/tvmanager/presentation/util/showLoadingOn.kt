@@ -53,9 +53,8 @@ fun setRecyclerViewResourceItems(
 
 fun getData(items: Result<List<Movie>>) = when (items) {
     is Result.Success -> items.data
-    is Error -> emptyList()
+    is Result.Error -> emptyList()
     is Result.Loading -> items.data
-    else -> emptyList()
 }
 
 fun setupMovieAdapter(

@@ -11,7 +11,7 @@ import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
 class CreateMovieFragment : Fragment() {
-    private val viewModel: CreateMovieViewModel by viewModels()
+    private val viewModel by viewModels<CreateMovieViewModel>()
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,

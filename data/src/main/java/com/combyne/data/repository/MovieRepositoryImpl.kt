@@ -16,7 +16,7 @@ class MovieRepositoryImpl
 constructor(
     private val movieRemoteData: MovieRemoteData,
 ) : MovieRepository {
-    override suspend fun getMovies(getMoviesParams: GetMoviesParams): Flow<Result<List<Movie>>> =
+    override fun getMovies(getMoviesParams: GetMoviesParams): Flow<Result<List<Movie>>> =
         flow {
             emit(Result.Loading())
             movieRemoteData.getMovies(getMoviesParams).collect {
@@ -25,7 +25,7 @@ constructor(
 
         }
 
-    override suspend fun saveMovie(saveMovieParams: SaveMovieParams): Flow<Result<Unit>> =
+    override fun saveMovie(saveMovieParams: SaveMovieParams): Flow<Result<Unit>> =
         flow {
             emit(Result.Loading())
             movieRemoteData.saveMovie(saveMovieParams).collect {

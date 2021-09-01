@@ -12,8 +12,8 @@ data class SaveMovieParams(
     val title: String,
     val releaseDate: ZonedDateTime?,
     val season: Int?,
-){
-    companion object Validate{
+) {
+    companion object Validate {
 
     }
 }
@@ -23,7 +23,7 @@ class SaveMovieUseCase
     private val movieRepository: MovieRepository,
     dispatcher: CoroutineDispatcher,
 ) : FlowUseCase<SaveMovieParams, Unit>(dispatcher) {
-    override suspend fun execute(parameters: SaveMovieParams): Flow<Result<Unit>> {
+    override fun execute(parameters: SaveMovieParams): Flow<Result<Unit>> {
         return movieRepository.saveMovie(parameters)
     }
 }

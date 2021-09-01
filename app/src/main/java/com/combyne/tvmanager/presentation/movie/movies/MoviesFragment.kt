@@ -13,7 +13,7 @@ import dagger.hilt.android.HiltAndroidApp
 
 @AndroidEntryPoint
 class MoviesFragment : Fragment() {
-    private val viewModel: MoviesViewModel by viewModels()
+    private val viewModel by viewModels<MoviesViewModel>()
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,

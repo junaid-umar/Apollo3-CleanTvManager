@@ -18,7 +18,7 @@ class GetMoviesUseCase
     private val movieRepository: MovieRepository,
     dispatcher: CoroutineDispatcher,
 ) : FlowUseCase<GetMoviesParams, List<Movie>>(dispatcher) {
-    override suspend fun execute(parameters: GetMoviesParams): Flow<Result<List<Movie>>> {
+    override fun execute(parameters: GetMoviesParams): Flow<Result<List<Movie>>> {
         return movieRepository.getMovies(parameters)
     }
 }
