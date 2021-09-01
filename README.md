@@ -2,7 +2,7 @@
 
 # Welcome to Apollo3 Tv Manager App.
 
-It's an app built using the MVVM, Repository Pattern and Clean Architecture. It uses Apollo Client to query Graphql Server.
+It's an app built using the MVVM, Repository Pattern and Clean Architecture. It uses Apollo Client with normazlized cache for persisting data.
 
 
 ## Architecture
@@ -45,3 +45,4 @@ This App uses Github Actions for Continuous Integration.
 
 UI improvement & Instrumentation Test
 
+<img src="images/Image1.jpeg" width=200> <img src="images/Image2.jpeg" width=200> <img src="images/Image3.jpeg" width=200> 
