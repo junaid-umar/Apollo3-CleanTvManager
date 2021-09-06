@@ -3,7 +3,7 @@ plugins {
     id("kotlin-android")
     id("kotlin-kapt")
     id("dagger.hilt.android.plugin")
-    id ("androidx.navigation.safeargs.kotlin")
+    id("androidx.navigation.safeargs.kotlin")
 }
 
 android {
@@ -38,7 +38,7 @@ android {
         }
     }
     buildFeatures {
-        dataBinding = true
+        compose = true
     }
     compileOptions {
         isCoreLibraryDesugaringEnabled = true
@@ -47,6 +47,23 @@ android {
     }
     kotlinOptions {
         jvmTarget = "11"
+    }
+    composeOptions {
+        kotlinCompilerExtensionVersion = Versions.COMPOSE
+    }
+    packagingOptions {
+        resources.pickFirsts.add("META-INF/*")
+        resources.excludes.add("**/attach_hotspot_windows.dll")
+        resources.excludes.add("META-INF/LICENSE")
+        resources.excludes.add("META-INF/licenses/ASM")
+        resources.excludes.add("META-INF/LICENSE.txt")
+        resources.excludes.add("META-INF/license.txt")
+        resources.excludes.add("META-INF/NOTICE")
+        resources.excludes.add("META-INF/NOTICE.txt")
+        resources.excludes.add("META-INF/notice.txt")
+        resources.excludes.add("META-INF/notice.txt")
+        resources.excludes.add("META-INF/ASL2.0")
+        resources.excludes.add("META-INF/*.kotlin_module")
     }
 }
 
@@ -62,10 +79,17 @@ dependencies {
     implementation(Libs.NAVIGATION_FRAGMENT)
     implementation(Libs.NAVIGATION_UI)
 
+
+    implementation (Libs.COMPOSE_UI)
+    implementation (Libs.COMPOSE_TOOLING)
+    implementation (Libs.COMPOSE_FOUNDATION)
+    implementation (Libs.COMPOSE_MATERIAL)
+
+
+
     implementation(Libs.MATERIAL)
-    implementation(Libs.CONSTRAINT_LAYOUT)
+
     implementation(Libs.APOLLO)
-    implementation("androidx.legacy:legacy-support-v4:1.0.0")
 
     // for backward compatibility of Java 8 features e.g java time
     coreLibraryDesugaring(Libs.LIBRARY_DESUGAR)

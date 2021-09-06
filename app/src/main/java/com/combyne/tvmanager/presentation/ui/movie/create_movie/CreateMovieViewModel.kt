@@ -1,4 +1,4 @@
-package com.combyne.tvmanager.presentation.movie.create_movie
+package com.combyne.tvmanager.presentation.ui.movie.create_movie
 
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData

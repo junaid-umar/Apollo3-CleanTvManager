@@ -11,14 +11,17 @@ object Libs {
     const val LIFECYCLE_ANNOTATION =
         "androidx.lifecycle:lifecycle-compiler:${Versions.LIFECYCLE_VERSION}"
 
+    const val COMPOSE_UI="androidx.compose.ui:ui:${Versions.COMPOSE}"
+    const val COMPOSE_FOUNDATION="androidx.compose.foundation:foundation:${Versions.COMPOSE}"
+    const val COMPOSE_TOOLING="androidx.compose.ui:ui-tooling:${Versions.COMPOSE}"
+    const val COMPOSE_MATERIAL="androidx.compose.material:material:${Versions.COMPOSE}"
+
     const val NAVIGATION_FRAGMENT =
         "androidx.navigation:navigation-fragment-ktx:${Versions.NAVIGATION_VERSION}"
     const val NAVIGATION_UI =
         "androidx.navigation:navigation-ui-ktx:${Versions.NAVIGATION_VERSION}"
 
     const val MATERIAL = "com.google.android.material:material:${Versions.MATERIAL}"
-    const val CONSTRAINT_LAYOUT =
-        "androidx.constraintlayout:constraintlayout:${Versions.CONSTRAINT_LAYOUT}"
 
 
     const val COROUTINES = "org.jetbrains.kotlinx:kotlinx-coroutines-android:${Versions.COROUTINES}"

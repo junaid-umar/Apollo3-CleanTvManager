@@ -1,7 +1,7 @@
-package com.combyne.tvmanager.presentation.movie.movies
+package com.combyne.tvmanager.presentation.ui.movie.movies
 
-import androidx.lifecycle.LiveData
-import androidx.lifecycle.MutableLiveData
+import androidx.compose.runtime.MutableState
+import androidx.compose.runtime.mutableStateOf
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.combyne.domain.model.Movie
@@ -19,7 +19,7 @@ class MoviesViewModel
 constructor(
     private val getMoviesUseCase: GetMoviesUseCase,
 ) : ViewModel() {
-    private var _movies = MutableLiveData<Result<List<Movie>>>()
+    val movies: MutableState<List<Movie>> = mutableStateOf(listOf())
 
     init {
         getMovies()
@@ -32,12 +32,11 @@ constructor(
                     1
                 )
             ).collect {
-                _movies.postValue(it)
+                if (it is Result.Success) {
+                    movies.value = it.data
+                }
             }
         }
     }
-
-    val movieList: LiveData<Result<List<Movie>>>
-        get() = _movies
 
 }
