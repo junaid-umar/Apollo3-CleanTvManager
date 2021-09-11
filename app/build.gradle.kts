@@ -84,8 +84,10 @@ dependencies {
     implementation (Libs.COMPOSE_TOOLING)
     implementation (Libs.COMPOSE_FOUNDATION)
     implementation (Libs.COMPOSE_MATERIAL)
-
-
+    implementation (Libs.COMPOSE_MATERIAL_ICON)
+    implementation (Libs.COMPOSE_MATERIAL_EICON)
+    implementation (Libs.COMPOSE_CONSTRAINT_LAYOUT)
+    implementation (Libs.COIL_COMPOSE)
 
     implementation(Libs.MATERIAL)
 

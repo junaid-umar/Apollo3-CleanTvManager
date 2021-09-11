@@ -20,7 +20,7 @@ class CreateMovieFragment : Fragment() {
     ): View {
         return ComposeView(requireContext()).apply {
             setContent {
-                Text(text = "Test2")
+
             }
         }
 

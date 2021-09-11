@@ -19,13 +19,16 @@ class MoviesViewModel
 constructor(
     private val getMoviesUseCase: GetMoviesUseCase,
 ) : ViewModel() {
-    val movies: MutableState<List<Movie>> = mutableStateOf(listOf())
+    val movies: MutableState<Map<Char, List<Movie>>> = mutableStateOf(mapOf())
+    val loading = mutableStateOf(false)
+    val error = mutableStateOf("")
+    val query = mutableStateOf("")
 
     init {
         getMovies()
     }
 
-    private fun getMovies() {
+    fun getMovies() {
         viewModelScope.launch {
             getMoviesUseCase.invoke(
                 GetMoviesParams(
@@ -33,10 +36,19 @@ constructor(
                 )
             ).collect {
                 if (it is Result.Success) {
-                    movies.value = it.data
+                    movies.value = it.data.sortedBy { it.title }.groupBy { it.title[0] }
+                    loading.value = false
+                } else if (it is Result.Loading) {
+                    loading.value = true
+                } else if (it is Result.Error) {
+                    error.value = it.error
+                    loading.value = false
                 }
             }
         }
     }
 
+    fun onQueryChanged(query: String) {
+        this.query.value = query
+    }
 }

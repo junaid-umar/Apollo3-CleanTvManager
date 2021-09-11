@@ -1,0 +1,49 @@
+package com.combyne.tvmanager.presentation.components
+
+import androidx.compose.foundation.layout.padding
+import androidx.compose.material.*
+import androidx.compose.runtime.Composable
+import androidx.compose.ui.Modifier
+import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.unit.dp
+import com.combyne.domain.util.Result
+
+@Composable
+fun DefaultSnackBar(
+    snackbarHostState: SnackbarHostState,
+    modifier: Modifier,
+    onDismiss: () -> Unit,
+) {
+    SnackbarHost(
+        hostState = snackbarHostState,
+        snackbar = { data ->
+            Snackbar(
+                modifier = Modifier
+                    .padding(16.dp),
+                content = {
+                    Text(
+                        text = data.message,
+                        style = MaterialTheme.typography.body2,
+                        color = Color.White
+                    )
+                },
+                action = {
+                    data.actionLabel?.let { actionLabel ->
+                        TextButton(onClick = {
+                            onDismiss()
+                        }) {
+                            Text(
+                                text = actionLabel,
+                                color = Color.White,
+                                style = MaterialTheme.typography.body2
+                            )
+                        }
+                    }
+                }
+            )
+
+        },
+        modifier = modifier
+    )
+
+}

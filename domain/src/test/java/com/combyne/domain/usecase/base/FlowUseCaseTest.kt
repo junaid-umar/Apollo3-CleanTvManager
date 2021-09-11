@@ -26,7 +26,7 @@ class FlowUseCaseTest {
 
     class DataUseCase(dispatcher: CoroutineDispatcher) :
         FlowUseCase<Unit, String>(dispatcher) {
-        override suspend fun execute(parameters: Unit): Flow<Result<String>> = flow {
+        override fun execute(parameters: Unit): Flow<Result<String>> = flow {
             emit(Result.Success("data"))
         }
     }

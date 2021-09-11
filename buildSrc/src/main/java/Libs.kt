@@ -15,6 +15,10 @@ object Libs {
     const val COMPOSE_FOUNDATION="androidx.compose.foundation:foundation:${Versions.COMPOSE}"
     const val COMPOSE_TOOLING="androidx.compose.ui:ui-tooling:${Versions.COMPOSE}"
     const val COMPOSE_MATERIAL="androidx.compose.material:material:${Versions.COMPOSE}"
+    const val COMPOSE_MATERIAL_ICON="androidx.compose.material:material-icons-core:${Versions.COMPOSE}"
+    const val COMPOSE_MATERIAL_EICON="androidx.compose.material:material-icons-extended:${Versions.COMPOSE}"
+    const val COIL_COMPOSE="io.coil-kt:coil-compose:${Versions.COIL_COMPOSE}"
+    const val COMPOSE_CONSTRAINT_LAYOUT="androidx.constraintlayout:constraintlayout-compose:${Versions.COMPOSE_CONSTRAINT_LAYOUT}"
 
     const val NAVIGATION_FRAGMENT =
         "androidx.navigation:navigation-fragment-ktx:${Versions.NAVIGATION_VERSION}"
