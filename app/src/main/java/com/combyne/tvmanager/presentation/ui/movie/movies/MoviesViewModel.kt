@@ -19,9 +19,7 @@ class MoviesViewModel
 constructor(
     private val getMoviesUseCase: GetMoviesUseCase,
 ) : ViewModel() {
-    val movies: MutableState<Map<Char, List<Movie>>> = mutableStateOf(mapOf())
-    val loading = mutableStateOf(false)
-    val error = mutableStateOf("")
+    val movies: MutableState<Result<Map<Char, List<Movie>>>?> = mutableStateOf(null)
     val query = mutableStateOf("")
 
     init {
@@ -36,13 +34,12 @@ constructor(
                 )
             ).collect {
                 if (it is Result.Success) {
-                    movies.value = it.data.sortedBy { it.title }.groupBy { it.title[0] }
-                    loading.value = false
-                } else if (it is Result.Loading) {
-                    loading.value = true
+                    movies.value =
+                        Result.Success(it.data.sortedBy { it.title }.groupBy { it.title[0] })
                 } else if (it is Result.Error) {
-                    error.value = it.error
-                    loading.value = false
+                    movies.value = Result.Error(it.error)
+                } else if (it is Result.Loading) {
+                    movies.value = Result.Loading()
                 }
             }
         }

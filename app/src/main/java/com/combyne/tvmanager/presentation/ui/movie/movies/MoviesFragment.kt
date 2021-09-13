@@ -12,13 +12,17 @@ import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.material.MaterialTheme
 import androidx.compose.material.Scaffold
 import androidx.compose.material.rememberScaffoldState
+import androidx.compose.runtime.LaunchedEffect
+import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.platform.ComposeView
 import androidx.compose.ui.platform.LocalFocusManager
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import coil.annotation.ExperimentalCoilApi
+import com.combyne.domain.util.Result
 import com.combyne.tvmanager.presentation.components.CircularProgressBar
+import com.combyne.tvmanager.presentation.components.DefaultSnackBar
 import com.combyne.tvmanager.presentation.components.Movies
 import com.combyne.tvmanager.presentation.components.SearchAppBar
 import com.combyne.tvmanager.presentation.theme.AppTheme
@@ -40,7 +44,6 @@ class MoviesFragment : Fragment() {
                 AppTheme(darkTheme = false) {
                     val movies = viewModel.movies.value
                     val query = viewModel.query.value
-                    val loading = viewModel.loading.value
                     val focusManager = LocalFocusManager.current
                     val scaffoldState = rememberScaffoldState()
 
@@ -54,15 +57,31 @@ class MoviesFragment : Fragment() {
                         snackbarHost = {
                             scaffoldState.snackbarHostState
                         }
-                        ) {
+                    ) {
                         Box(
                             modifier = Modifier
                                 .fillMaxSize()
                                 .background(color = MaterialTheme.colors.surface)
                         ) {
-                            Movies(movies = movies, onClick = {})
-                            CircularProgressBar(isLoading = loading)
+                            if (movies is Result.Success) {
+                                Movies(movies = movies.data, onClick = {})
+                            }
+                            if (movies is Result.Loading) {
+                                CircularProgressBar(isLoading = true)
+                            }
+                            if (movies is Result.Error) {
+                                LaunchedEffect(movies) {
+                                    scaffoldState.snackbarHostState.showSnackbar(
+                                        message = movies.error
+                                    )
+                                }
+                                DefaultSnackBar(
+                                    snackbarHostState = scaffoldState.snackbarHostState,
+                                    modifier = Modifier.align(Alignment.BottomCenter)) {
+                                }
+                            }
                         }
+
                     }
                 }
             }

@@ -22,6 +22,7 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
 import coil.annotation.ExperimentalCoilApi
 import coil.compose.rememberImagePainter
@@ -121,7 +122,7 @@ fun MovieCard(
                         placeholder(R.drawable.movie_holder)
                     }
                 ),
-                contentDescription = "Movie Cover",
+                contentDescription = stringResource(R.string.movie_cover),
                 modifier = Modifier
                     .size(100.dp)
                     .clip(RoundedCornerShape(6.dp))
@@ -147,7 +148,7 @@ fun MovieCard(
                 }
                 movie.seasons?.let {
                     Text(
-                        text = "Season: " + movie.seasons.toString(),
+                        text = stringResource(R.string.season, movie.seasons.toString()),
                         style = MaterialTheme.typography.caption
                     )
                 }

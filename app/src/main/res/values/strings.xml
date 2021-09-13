@@ -3,7 +3,11 @@
     <string name="show_list_of_added_movies">Show list of added movies</string>
     <string name="add_new_movie">Add new movie</string>
     <string name="movie">Movie</string>
+    <string name="title">Title</string>
     <string name="release_date">Release Date</string>
     <string name="seasons">Seasons</string>
     <string name="save_movie">Save Movie</string>
+    <string name="movie_cover">Movie Cover</string>
+    <string name="search">Search</string>
+    <string name="season">Season: %1$s</string>
 </resources>
