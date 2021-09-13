@@ -1,9 +1,9 @@
-package com.combyne.tvmanager.presentation.home
+package com.combyne.tvmanager.presentation.ui.home
 
 import android.util.Log
 import android.view.View
 import androidx.lifecycle.ViewModel
-import com.combyne.tvmanager.presentation.navigation.MovieNavigation
+import com.combyne.tvmanager.presentation.ui.navigation.MovieNavigation
 
 class HomeViewModel : ViewModel() {
 

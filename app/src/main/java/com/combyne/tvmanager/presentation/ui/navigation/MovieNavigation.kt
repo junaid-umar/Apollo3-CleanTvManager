@@ -1,8 +1,8 @@
-package com.combyne.tvmanager.presentation.navigation
+package com.combyne.tvmanager.presentation.ui.navigation
 
 import android.view.View
 import androidx.navigation.findNavController
-import com.combyne.tvmanager.presentation.home.HomeFragmentDirections
+import com.combyne.tvmanager.presentation.ui.home.HomeFragmentDirections
 
 object MovieNavigation {
 

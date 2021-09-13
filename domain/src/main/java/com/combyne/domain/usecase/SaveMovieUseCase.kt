@@ -13,8 +13,8 @@ data class SaveMovieParams(
     val releaseDate: ZonedDateTime?,
     val season: Int?,
 ) {
-    companion object Validate {
-
+    fun isMovieValid(): Boolean {
+        return title.isNotEmpty()
     }
 }
 

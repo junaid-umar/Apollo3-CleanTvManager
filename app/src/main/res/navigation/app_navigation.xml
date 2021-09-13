@@ -1,15 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <navigation xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/app_navigation"
     app:startDestination="@id/home">
 
     <fragment
         android:id="@+id/home"
-        android:name="com.combyne.tvmanager.presentation.home.HomeFragment"
-        android:label="fragment_home"
-        tools:layout="@layout/fragment_home" >
+        android:name="com.combyne.tvmanager.presentation.ui.home.HomeFragment"
+        android:label="fragment_home">
         <action
             android:id="@+id/action_home_to_createMovie"
             app:destination="@id/createMovie" />
@@ -20,13 +18,11 @@
 
     <fragment
         android:id="@+id/createMovie"
-        android:name="com.combyne.tvmanager.presentation.movie.create_movie.CreateMovieFragment"
-        android:label="fragment_create_movie"
-        tools:layout="@layout/fragment_create_movie" />
+        android:name="com.combyne.tvmanager.presentation.ui.movie.create_movie.CreateMovieFragment"
+        android:label="fragment_create_movie" />
 
     <fragment
         android:id="@+id/movies"
-        android:name="com.combyne.tvmanager.presentation.movie.movies.MoviesFragment"
-        android:label="fragment_movies"
-        tools:layout="@layout/fragment_movies" />
+        android:name="com.combyne.tvmanager.presentation.ui.movie.movies.MoviesFragment"
+        android:label="fragment_movies" />
 </navigation>

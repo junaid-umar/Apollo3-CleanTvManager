@@ -3,7 +3,7 @@ plugins {
     id("kotlin-android")
     id("kotlin-kapt")
     id("dagger.hilt.android.plugin")
-    id ("androidx.navigation.safeargs.kotlin")
+    id("androidx.navigation.safeargs.kotlin")
 }
 
 android {
@@ -38,7 +38,7 @@ android {
         }
     }
     buildFeatures {
-        dataBinding = true
+        compose = true
     }
     compileOptions {
         isCoreLibraryDesugaringEnabled = true
@@ -48,6 +48,10 @@ android {
     kotlinOptions {
         jvmTarget = "11"
     }
+    composeOptions {
+        kotlinCompilerExtensionVersion = Versions.COMPOSE
+    }
+
 }
 
 dependencies {
@@ -62,10 +66,19 @@ dependencies {
     implementation(Libs.NAVIGATION_FRAGMENT)
     implementation(Libs.NAVIGATION_UI)
 
+
+    implementation (Libs.COMPOSE_UI)
+    implementation (Libs.COMPOSE_TOOLING)
+    implementation (Libs.COMPOSE_FOUNDATION)
+    implementation (Libs.COMPOSE_MATERIAL)
+    implementation (Libs.COMPOSE_MATERIAL_ICON)
+    implementation (Libs.COMPOSE_MATERIAL_EICON)
+    implementation (Libs.COMPOSE_CONSTRAINT_LAYOUT)
+    implementation (Libs.COIL_COMPOSE)
+
     implementation(Libs.MATERIAL)
-    implementation(Libs.CONSTRAINT_LAYOUT)
+
     implementation(Libs.APOLLO)
-    implementation("androidx.legacy:legacy-support-v4:1.0.0")
 
     // for backward compatibility of Java 8 features e.g java time
     coreLibraryDesugaring(Libs.LIBRARY_DESUGAR)
