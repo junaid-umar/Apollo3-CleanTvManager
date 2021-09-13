@@ -63,8 +63,6 @@ dependencies {
 
     implementation(Libs.VIEW_MODEL)
     implementation(Libs.LIFECYCLE_ANNOTATION)
-    implementation(Libs.NAVIGATION_FRAGMENT)
-    implementation(Libs.NAVIGATION_UI)
 
 
     implementation (Libs.COMPOSE_UI)
@@ -75,6 +73,8 @@ dependencies {
     implementation (Libs.COMPOSE_MATERIAL_EICON)
     implementation (Libs.COMPOSE_CONSTRAINT_LAYOUT)
     implementation (Libs.COIL_COMPOSE)
+    implementation (Libs.COMPOSE_NAVIGATION)
+    implementation (Libs.HILT_NAVIGATION_COMPOSE)
 
     implementation(Libs.MATERIAL)
 

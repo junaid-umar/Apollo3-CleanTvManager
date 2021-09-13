@@ -20,10 +20,7 @@ object Libs {
     const val COIL_COMPOSE="io.coil-kt:coil-compose:${Versions.COIL_COMPOSE}"
     const val COMPOSE_CONSTRAINT_LAYOUT="androidx.constraintlayout:constraintlayout-compose:${Versions.COMPOSE_CONSTRAINT_LAYOUT}"
 
-    const val NAVIGATION_FRAGMENT =
-        "androidx.navigation:navigation-fragment-ktx:${Versions.NAVIGATION_VERSION}"
-    const val NAVIGATION_UI =
-        "androidx.navigation:navigation-ui-ktx:${Versions.NAVIGATION_VERSION}"
+    const val COMPOSE_NAVIGATION="androidx.navigation:navigation-compose:${Versions.COMPOSE_NAVIGATION}"
 
     const val MATERIAL = "com.google.android.material:material:${Versions.MATERIAL}"
 
@@ -41,6 +38,7 @@ object Libs {
     const val HILT = "com.google.dagger:hilt-android:${Versions.HILT}"
     const val HILT_CORE = "com.google.dagger:hilt-core:${Versions.HILT}"
     const val HILT_COMPILER = "com.google.dagger:hilt-android-compiler:${Versions.HILT}"
+    const val HILT_NAVIGATION_COMPOSE = "androidx.hilt:hilt-navigation-compose:${Versions.HILT_NAVIGATION_COMPOSE}"
 
 
 

@@ -10,4 +10,6 @@
     <string name="movie_cover">Movie Cover</string>
     <string name="search">Search</string>
     <string name="season">Season: %1$s</string>
+    <string name="show_added_movies">Show Added Movies</string>
+    <string name="create_new_movie">Create New Movie</string>
 </resources>
