@@ -33,7 +33,7 @@ This App uses Github Actions for Continuous Integration.
 
 ## Libraries
   1.  Material Design - UI design
-  2.  AndroidX - ViewModel, LiveData
+  2.  AndroidX - ViewModel, Compose
   3.  Coroutines
   4.  Hilt -  Dependency Injection
   5.  Navigation Component - User navigation
